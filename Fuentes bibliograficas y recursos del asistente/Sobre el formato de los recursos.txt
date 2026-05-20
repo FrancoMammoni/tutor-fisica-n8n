@@ -1,0 +1,16 @@
+=== GUIA DE FORMATOS PARA EL BOT DE IA ===
+
+✅ FORMATOS QUE FUNCIONAN:
+- TXT (Texto plano): Es el formato mas liviano, rapido y seguro. Nunca falla.
+- PDF Nativo o Digital: Archivos exportados directamente desde Word, LaTeX o paginas web. El texto interno es real y extraible.
+- CSV / JSON: Se pueden cargar tablas de datos o listas de problemas estructurados.
+- DOCX: Funciona bien para apuntes, aunque si tiene formato muy complejo puede requerir un nodo especial en n8n que lo transforme a txt o
+elimine los caracteres no permitidos.
+
+❌ FORMATOS QUE FALLAN (CAUSAN ERROR "VECTOR DIMENSION 0"):
+- PDF Escaneados (Libros fotocopiados): Para el sistema, son solo un monton de fotos apiladas. El bot no tiene ojos; extraera un vacio y hara colapsar la base de datos.
+- Archivos de Imagen (JPG, PNG): El extractor actual necesita caracteres de texto, no funciona con fotos.
+- PDFs Protegidos (DRM): Archivos universitarios o libros comprados con bloqueo de copia o contraseña, el data loader no tiene acceso.
+
+Solucion rapida para escaneos:
+Seleccionar el capitulo -> Pasarlo por una herramienta OCR online (como pdfguru) -> Copiar el texto resultante -> Guardarlo como archivo TXT.
